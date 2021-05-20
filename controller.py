@@ -8,4 +8,4 @@ class Controller:
         self.__view = View()
 
     def start(self):
-        self.__view.showMessage(self.__model.getMessage(2))
+        self.__view.showMessage(self.__model.getMessage(self.__view.askRank()))
