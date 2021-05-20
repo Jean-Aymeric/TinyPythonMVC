@@ -8,4 +8,4 @@ class Controller:
         self.__view = View()
 
     def start(self):
-        self.__view.showMessage(self.__model.Message)
+        self.__view.showMessage(self.__model.getMessage(2))
