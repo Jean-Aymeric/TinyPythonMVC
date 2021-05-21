@@ -1,5 +1,5 @@
 import tkinter.messagebox
-from icontroller import IController
+from shared.icontroller import IController
 
 
 class View:

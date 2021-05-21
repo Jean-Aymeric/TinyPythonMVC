@@ -1,6 +1,6 @@
-from model import Model
-from view import View
-from icontroller import IController
+from model.model import Model
+from view.view import View
+from shared.icontroller import IController
 
 
 class Controller(IController):
