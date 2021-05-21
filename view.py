@@ -22,7 +22,7 @@ class View:
     def __rankUpdated(self, *args):
         try:
             self.__controller.performUpdateRank(self.__rank.get())
-        except:
+        except tkinter.TclError:
             self.__controller.performUpdateRank(-1)
 
     def __buttonOk(self):
