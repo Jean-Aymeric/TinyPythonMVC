@@ -1,14 +1,10 @@
 from model.dbconnector import DBConnector
-
+from model.dao.daohelloworld import DAOHelloWorld
 
 class Model:
     def __init__(self):
         self.__dbConnector = DBConnector()
+        self.__daoHelloWorld = DAOHelloWorld(self.__dbConnector)
 
     def getMessage(self, rank):
-        return self.getHelloWorldMessageByNum(rank)[0][1]
-
-    def getHelloWorldMessageByNum(self, num):
-        cursor = self.__dbConnector.getCursor()
-        cursor.callproc("helloWorldByNum", [num])
-        return next(cursor.stored_results()).fetchall()
+        return self.__daoHelloWorld.getHelloWorldMessageByNum(rank)
