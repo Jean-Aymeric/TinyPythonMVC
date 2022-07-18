@@ -15,6 +15,7 @@ class View:
         self.__rank = tkinter.IntVar(value=0)
         self.__rank.trace_add("write", self.__rankUpdated)
         self.__message = tkinter.StringVar(value='')
+        self.__window.protocol("WM_DELETE_WINDOW", self.__on_closing)
         tkinter.Label(self.__window, text='Rank : ').pack()
         tkinter.Entry(self.__window, textvariable=self.__rank).pack()
         tkinter.Label(self.__window, textvariable=self.__message).pack()
@@ -35,3 +36,6 @@ class View:
     def askRank(self):
         self.__window.mainloop()
         return self.__rank.get()
+
+    def __on_closing(self):
+        self.__window.destroy()

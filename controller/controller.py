@@ -12,7 +12,6 @@ class Controller(IController):
         self.__view.askRank()
 
     def performUpdateRank(self, rank):
-        print("coucou")
         if rank == -1:
             self.__view.showMessage("")
         else:
